@@ -1,41 +1,94 @@
 class FoodItem {
+  final String id;
   final String name;
   final String imageURL;
   final double price;
+  final bool isFavorite;
+  final String categoriesId;
 
-  FoodItem({
-    required this.name, 
-    required this.imageURL, 
-    required this.price
+  const FoodItem({
+    required this.id,
+    required this.name,
+    required this.imageURL,
+    required this.price,
+    this.isFavorite = false,
+    required this.categoriesId,
   });
+
+  FoodItem copyWith({
+    String? id,
+    String? name,
+    String? imageURL,
+    double? price,
+    bool? isFavorite,
+    String? categoriesId,
+  }) {
+    return FoodItem(
+      id: id ?? this.id,
+      name: name ?? this.name,
+      imageURL: imageURL ?? this.imageURL,
+      price: price ?? this.price,
+      isFavorite: isFavorite ?? this.isFavorite,
+      categoriesId: categoriesId ?? this.categoriesId,
+    );
+  }
 }
 
 List<FoodItem> food = [
-
   FoodItem(
-    name: 'Beef Burger', 
-    imageURL: 'https://www.freepnglogos.com/uploads/burger-png/download-hamburger-burger-png-image-png-image-pngimg-15.png', 
-    price: 8.99
+    id: 'Burger 1',
+    name: 'Beef Burger',
+    imageURL: 'assets/images/beef_burger.png',
+    price: 120,
+    categoriesId: '1',
   ),
   FoodItem(
-    name: 'Chicken Burger', 
-    imageURL: 'https://www.pngarts.com/files/3/Chicken-Burger-PNG-Photo.png', 
-    price: 8.99
+    id: 'Burger 2',
+    name: 'Chicken Burger',
+    imageURL: 'assets/images/Chicken-Burger.png',
+    price: 150,
+    categoriesId: '1',
   ),
   FoodItem(
-    name: 'Chesse Burger', 
-    imageURL: 'https://www.pngarts.com/files/3/Chicken-Burger-PNG-Photo.png', 
-    price: 10.99
+    id: 'Burger 3',
+    name: 'Chesse Burger',
+    imageURL: 'assets/images/Chicken-Burger.png',
+    price: 150,
+    categoriesId: '1',
   ),
   FoodItem(
-    name: 'Chicken Pizza', 
-    imageURL: 'https://graficsea.com/wp-content/uploads/2021/12/Chicken-Supreme-Pizza-.png', 
-    price: 10.99
+    id: 'Pizza',
+    name: 'Chicken Pizza',
+    imageURL: 'assets/images/Chicken-Pizza.png',
+    price: 150,
+    categoriesId: '2',
   ),
   FoodItem(
-    name: 'Pasta', 
-    imageURL: 'https://www.pngall.com/wp-content/uploads/2018/04/Pasta-PNG-Image.png', 
-    price: 10.99
+    id: 'Pasta 1',
+    name: 'Pasta',
+    imageURL: 'assets/images/Pasta.png',
+    price: 200,
+    categoriesId: '3',
   ),
-
+  FoodItem(
+    id: 'Pasta 2',
+    name: 'Pasta2',
+    imageURL: 'assets/images/Pasta.png',
+    price: 200,
+    categoriesId: '4',
+  ),
+  FoodItem(
+    id: 'Pasta 3',
+    name: 'Pasta3',
+    imageURL: 'assets/images/Pasta.png',
+    price: 200,
+    categoriesId: '5',
+  ),
+  FoodItem(
+    id: 'Pasta 4',
+    name: 'Pasta4',
+    imageURL: 'assets/images/Pasta.png',
+    price: 200,
+    categoriesId: '6',
+  ),
 ];
